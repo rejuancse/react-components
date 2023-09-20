@@ -12,8 +12,7 @@ function ButtonPage() {
           outline
           rounded
           className="mb-5"
-          onClick={handleClick}
-        >
+          onClick={handleClick} >
           <GoBell />
           Click me!!
         </Button>

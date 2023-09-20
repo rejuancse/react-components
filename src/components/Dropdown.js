@@ -49,8 +49,7 @@ function Dropdown({ options, value, onChange }) {
     <div ref={divEl} className="w-48 relative">
       <Panel
         className="flex justify-between items-center cursor-pointer"
-        onClick={handleClick}
-      >
+        onClick={handleClick} >
         {value?.label || 'Select...'}
         <GoChevronDown className="text-lg" />
       </Panel>
