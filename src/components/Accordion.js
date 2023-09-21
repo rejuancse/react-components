@@ -6,11 +6,7 @@ function Accordion({ items }) {
 
   const handleClick = (nextIndex) => {
     setExpandedIndex((currentExpandedIndex) => {
-      if (currentExpandedIndex === nextIndex) {
-        return -1;
-      } else {
-        return nextIndex;
-      }
+      return currentExpandedIndex === nextIndex ? -1 : nextIndex;
     });
   };
 
