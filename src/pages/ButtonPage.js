@@ -5,31 +5,31 @@ function ButtonPage() {
   const handleClick = () => {};
 
   return (
-    <div>
+    <div className="">
       <div>
         <Button
           secondary
           outline
           rounded
-          className="mb-5"
+          className="mb-2"
           onClick={handleClick} >
           <GoBell />
           Click me!!
         </Button>
       </div>
-      <div>
+      <div className="mb-2">
         <Button danger outline onMouseEnter={handleClick}>
           <GoCloudDownload />
           Buy Now!
         </Button>
       </div>
-      <div>
+      <div className="mb-2">
         <Button warning onMouseLeave={handleClick}>
           <GoDatabase />
           See Deal!
         </Button>
       </div>
-      <div>
+      <div className="mb-2">
         <Button secondary outline>
           Hide Ads!
         </Button>
