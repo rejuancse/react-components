@@ -26,11 +26,11 @@ function Table({ data, config, keyFn }) {
   });
 
   return (
-    <table className="table-auto border-spacing-2">
+    <table className="table-auto border-spacing-2 border-collapse table-fixed w-full text-sm">
       <thead>
         <tr className="border-b-2">{renderedHeaders}</tr>
       </thead>
-      <tbody>{renderedRows}</tbody>
+      <tbody className="bg-white dark:bg-slate-800">{renderedRows}</tbody>
     </table>
   );
 }
