@@ -46,3 +46,15 @@ button > svg {
         margin-left: 100%;
     }
 }
+
+.table-wrap h2 {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.table-search {
+    margin-bottom: 20px;
+}
+.table-search input {
+    border: 1px solid #e5e7eb;
+    padding: 6px 10px;
+}
