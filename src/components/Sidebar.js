@@ -9,6 +9,7 @@ function Sidebar() {
         { label: 'Table', path: '/table' },
         { label: 'Counter', path: '/counter' },
         { label: 'Progress Bar', path: '/progress-bar' },
+        { label: 'Bar Charts', path: '/bar-charts' },
     ];
 
     const renderedLinks = links.map((link) => {

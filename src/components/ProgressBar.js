@@ -14,7 +14,6 @@ function ProgressBar({
     color = 'blue',
     striped,
     animated,
-    indeterminate,
     showLabel,
     height = 20,
     ...rest
@@ -25,17 +24,6 @@ function ProgressBar({
         'progress-striped': striped,
         'progress-striped-animated': striped && animated,
     });
-
-    if (indeterminate) {
-        return (
-            <div
-                {...rest}
-                className="relative w-full overflow-hidden rounded bg-gray-200"
-                style={{ height }} >
-                <div className={classNames(barClasses, 'progress-indeterminate')} />
-            </div>
-        );
-    }
 
     return (
         <div

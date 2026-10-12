@@ -7,6 +7,7 @@ import ModalPage from './pages/ModalPage';
 import TablePage from './pages/TablePage';
 import CounterPage from './pages/CounterPage';
 import ProgressBarPage from './pages/ProgressBarPage';
+import BarChartPage from './pages/BarChartPage';
 
 function App() {
     return (
@@ -34,6 +35,9 @@ function App() {
                 </Route>
                 <Route path="/progress-bar">
                     <ProgressBarPage />
+                </Route>
+                <Route path="/bar-charts">
+                    <BarChartPage />
                 </Route>
             </div>
         </div>
