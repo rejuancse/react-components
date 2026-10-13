@@ -41,6 +41,9 @@ function App() {
                 <Route path="/counter">
                     <CounterPage initialCount={10} />
                 </Route>
+                <Route path="/clockupdater">
+                    <ClockUpdater initialCount={10} />
+                </Route>
                 <Route path="/user-list">
                     <UserList initialCount={10} />
                 </Route>
