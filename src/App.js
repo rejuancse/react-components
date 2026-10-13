@@ -8,6 +8,7 @@ import TablePage from './pages/TablePage';
 import CounterPage from './pages/CounterPage';
 import ProgressBarPage from './pages/ProgressBarPage';
 import BarChartPage from './pages/BarChartPage';
+import ClockUpdater from './pages/ClockUpdater';
 
 function App() {
     return (
@@ -15,6 +16,12 @@ function App() {
             <Sidebar />
 
             <div className="col-span-5">
+                <Route path="/bar-charts">
+                    <BarChartPage />
+                </Route>
+                <Route path="/progress-bar">
+                    <ProgressBarPage />
+                </Route>
                 <Route path="/accordion">
                     <AccordionPage />
                 </Route>
@@ -33,12 +40,10 @@ function App() {
                 <Route path="/counter">
                     <CounterPage initialCount={10} />
                 </Route>
-                <Route path="/progress-bar">
-                    <ProgressBarPage />
+                <Route path="/clockupdater">
+                    <ClockUpdater initialCount={10} />
                 </Route>
-                <Route path="/bar-charts">
-                    <BarChartPage />
-                </Route>
+
             </div>
         </div>
     );
