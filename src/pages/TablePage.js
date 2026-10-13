@@ -4,9 +4,13 @@ function TablePage() {
     const data = [
         { name: 'Orange', color: 'bg-orange-500', score: 5 },
         { name: 'Apple', color: 'bg-red-500', score: 3 },
+        { name: 'Avocados', color: 'bg-green-700', score: 3 },
         { name: 'Banana', color: 'bg-yellow-500', score: 1 },
         { name: 'Lime', color: 'bg-green-500', score: 4 },
         { name: 'Cherry', color: 'bg-red-700', score: 2.5 },
+        { name: 'Cranberry', color: 'bg-red-500', score: 3.5 },
+        { name: 'Dragonfruit', color: 'bg-red-700', score: 4.5 },
+        { name: 'Grapefruit', color: 'bg-yellow-700', score: 3.5 },
     ];
 
     const config = [

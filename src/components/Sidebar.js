@@ -11,6 +11,7 @@ function Sidebar() {
         { label: 'Table', path: '/table' },
         { label: 'Counter', path: '/counter' },
         { label: 'Clock Updater', path: '/clockupdater' },
+        { label: 'Users List', path: '/user-list' },
     ];
 
     const renderedLinks = links.map((link) => {

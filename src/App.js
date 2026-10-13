@@ -9,6 +9,7 @@ import CounterPage from './pages/CounterPage';
 import ProgressBarPage from './pages/ProgressBarPage';
 import BarChartPage from './pages/BarChartPage';
 import ClockUpdater from './pages/ClockUpdater';
+import UserList from './pages/UserList';
 
 function App() {
     return (
@@ -40,10 +41,9 @@ function App() {
                 <Route path="/counter">
                     <CounterPage initialCount={10} />
                 </Route>
-                <Route path="/clockupdater">
-                    <ClockUpdater initialCount={10} />
+                <Route path="/user-list">
+                    <UserList initialCount={10} />
                 </Route>
-
             </div>
         </div>
     );

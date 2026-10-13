@@ -1,11 +1,19 @@
 import { Fragment, useState } from 'react';
 
+const ITEMS_PER_PAGE = 5;
+
 function Table({ data, config, keyFn }) {
     const [searchTerm, setSearchTerm] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
 
     const filteredData = data.filter( (rowData) =>
         rowData.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
+    const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const paginatedData = filteredData.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+    const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
     const renderedHeaders = config.map((column) => {
         if (column.header) {
@@ -15,7 +23,7 @@ function Table({ data, config, keyFn }) {
         return <th key={column.label}>{column.label}</th>;
     });
 
-    const renderedRows = filteredData.map((rowData) => {
+    const renderedRows = paginatedData.map((rowData) => {
         const renderedCells = config.map((column) => {
             return (
                 <td className="p-2" key={column.label}>
@@ -40,7 +48,10 @@ function Table({ data, config, keyFn }) {
                     name="table-search"
                     placeholder="Search here..."
                     value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
+                    onChange={(e) => {
+                        setSearchTerm(e.target.value);
+                        setCurrentPage(1);
+                    }}
                 />
             </div>
 
@@ -50,6 +61,36 @@ function Table({ data, config, keyFn }) {
                 </thead>
                 <tbody className="bg-white dark:bg-slate-800">{renderedRows}</tbody>
             </table>
+
+            {totalPages > 1 && (
+                <div className="paginations">
+                    <button
+                        className="page-btn"
+                        onClick={() => setCurrentPage((page) => Math.max(page - 1, 1))}
+                        disabled={currentPage === 1}
+                        >
+                        Prev
+                    </button>
+
+                    {pageNumbers.map((pageNumber) => (
+                        <button
+                            key={pageNumber}
+                            className={`page-btn ${pageNumber === currentPage ? 'active' : ''}`}
+                            onClick={() => setCurrentPage(pageNumber)}
+                            >
+                            {pageNumber}
+                        </button>
+                    ))}
+
+                    <button
+                        className="page-btn"
+                        onClick={() => setCurrentPage((page) => Math.min(page + 1, totalPages))}
+                        disabled={currentPage === totalPages}
+                        >
+                        Next
+                    </button>
+                </div>
+            )}
         </div>
     );
 }
