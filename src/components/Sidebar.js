@@ -2,14 +2,14 @@ import Link from './Link';
 
 function Sidebar() {
     const links = [
-        { label: 'Bar Charts', path: '/bar-charts' },
-        { label: 'Progress Bar', path: '/progress-bar' },
         { label: 'Dropdown', path: '/' },
         { label: 'Accordion', path: '/accordion' },
         { label: 'Buttons', path: '/buttons' },
         { label: 'Modal', path: '/modal' },
         { label: 'Table', path: '/table' },
         { label: 'Counter', path: '/counter' },
+        { label: 'Progress Bar', path: '/progress-bar' },
+        { label: 'Bar Charts', path: '/bar-charts' },
         { label: 'Clock Updater', path: '/clockupdater' },
         { label: 'Users List', path: '/user-list' },
     ];

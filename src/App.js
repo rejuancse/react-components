@@ -17,17 +17,11 @@ function App() {
             <Sidebar />
 
             <div className="col-span-5">
-                <Route path="/bar-charts">
-                    <BarChartPage />
-                </Route>
-                <Route path="/progress-bar">
-                    <ProgressBarPage />
+                <Route path="/">
+                    <DropdownPage />
                 </Route>
                 <Route path="/accordion">
                     <AccordionPage />
-                </Route>
-                <Route path="/">
-                    <DropdownPage />
                 </Route>
                 <Route path="/buttons">
                     <ButtonPage />
@@ -41,11 +35,17 @@ function App() {
                 <Route path="/counter">
                     <CounterPage initialCount={10} />
                 </Route>
+                <Route path="/progress-bar">
+                    <ProgressBarPage />
+                </Route>
+                <Route path="/bar-charts">
+                    <BarChartPage />
+                </Route>
                 <Route path="/clockupdater">
-                    <ClockUpdater initialCount={10} />
+                    <ClockUpdater />
                 </Route>
                 <Route path="/user-list">
-                    <UserList initialCount={10} />
+                    <UserList />
                 </Route>
             </div>
         </div>
