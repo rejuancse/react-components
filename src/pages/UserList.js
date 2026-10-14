@@ -7,8 +7,6 @@ async function fetchUsers() {
     return res.json();
 }
 
-console.log('Res', fetchUsers());
-
 function UserList() {
     const [users, setUsers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);

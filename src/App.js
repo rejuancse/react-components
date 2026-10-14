@@ -10,6 +10,7 @@ import ProgressBarPage from './pages/ProgressBarPage';
 import BarChartPage from './pages/BarChartPage';
 import ClockUpdater from './pages/ClockUpdater';
 import UserList from './pages/UserList';
+import UserManagement from './pages/UserManagement';
 
 function App() {
     return (
@@ -46,6 +47,9 @@ function App() {
                 </Route>
                 <Route path="/user-list">
                     <UserList />
+                </Route>
+                <Route path="/user-managements">
+                    <UserManagement />
                 </Route>
             </div>
         </div>

@@ -12,6 +12,7 @@ function Sidebar() {
         { label: 'Bar Charts', path: '/bar-charts' },
         { label: 'Clock Updater', path: '/clockupdater' },
         { label: 'Users List', path: '/user-list' },
+        { label: 'User Management', path: '/user-managements' },
     ];
 
     const renderedLinks = links.map((link) => {

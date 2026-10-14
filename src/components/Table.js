@@ -59,7 +59,7 @@ function Table({ data, config, keyFn }) {
                 <thead>
                     <tr className="border-b-2">{renderedHeaders}</tr>
                 </thead>
-                <tbody className="bg-white dark:bg-slate-800">{renderedRows}</tbody>
+                <tbody className="dark:bg-slate-800">{renderedRows}</tbody>
             </table>
 
             {totalPages > 1 && (
