@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react';
 
 const ITEMS_PER_PAGE = 5;
 
-function Table({ data, config, keyFn }) {
+function Table({ data, config, keyFn, showSearch = true }) {
     const [searchTerm, setSearchTerm] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
 
@@ -41,19 +41,21 @@ function Table({ data, config, keyFn }) {
 
     return (
         <div className="table-wrap">
-            <div className="table-search">
-                <input
-                    type="text"
-                    className="search"
-                    name="table-search"
-                    placeholder="Search here..."
-                    value={searchTerm}
-                    onChange={(e) => {
-                        setSearchTerm(e.target.value);
-                        setCurrentPage(1);
-                    }}
-                />
-            </div>
+            {showSearch && (
+                <div className="table-search">
+                    <input
+                        type="text"
+                        className="search"
+                        name="table-search"
+                        placeholder="Search here..."
+                        value={searchTerm}
+                        onChange={(e) => {
+                            setSearchTerm(e.target.value);
+                            setCurrentPage(1);
+                        }}
+                    />
+                </div>
+            )}
 
             <table className="table-auto border-spacing-2 border-collapse table-fixed w-full text-sm">
                 <thead>

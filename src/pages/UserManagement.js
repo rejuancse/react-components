@@ -1,6 +1,8 @@
 import { useMemo, useState } from 'react';
 import Dropdown from '../components/Dropdown';
 import Panel from '../components/Panel';
+import Table from '../components/Table'
+import Button from '../components/Button';
 
 const initialUsers = [
     {
@@ -86,11 +88,42 @@ function UserManagement() {
         setRole('Viewer')
     }
 
-      const options = [
+    const options = [
         { label: 'All', value: 'All' },
         { label: 'Admin', value: 'Admin' },
         { label: 'Editor', value: 'Editor' },
         { label: 'Viewer', value: 'Viewer' },
+    ];
+
+    const tableConfig = [
+        {
+            label: 'Name',
+            render: (user) => user.name,
+        },
+        {
+            label: 'Email',
+            render: (user) => user.email,
+        },
+        {
+            label: 'Role',
+            render: (user) => (
+                <span className={`role role-${user.role.toLowerCase()}`}>
+                    {user.role}
+                </span>
+            ),
+        },
+        {
+            label: 'Action',
+            render: (user) => (
+                <button
+                    className="delete-button"
+                    type="button"
+                    onClick={() => handleDeleteUser(user.id)}
+                >
+                    Delete
+                </button>
+            ),
+        },
     ];
 
     return (
@@ -139,7 +172,7 @@ function UserManagement() {
                             <option>Viewer</option>
                         </select>
                     </label>
-                    <button type="submit">Add User</button>
+                    <Button type="submit" primary>Add User</Button>
                 </form>
 
                 {error && <p className="error" role="alert">{error}</p>}
@@ -174,42 +207,12 @@ function UserManagement() {
                         No users found!
                     </p>
                 ) : (
-                    <div className="table-wrap">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                {filteredUsers.map((user) => (
-                                    <tr key={user.id}>
-                                        <td>{user.name}</td>
-                                        <td>{user.email}</td>
-                                        <td>
-                                            <span
-                                                className={`role role-${user.role.toLowerCase()}`}
-                                                >
-                                                {user.role}
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <button
-                                                className="delete-button"
-                                                type="button"
-                                                onClick={() => handleDeleteUser(user.id)} >
-                                                Delete
-                                            </button>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
+                    <Table
+                        data={filteredUsers}
+                        config={tableConfig}
+                        keyFn={(user) => user.id}
+                        showSearch={false}
+                    />
                 )}
             </Panel>
         </main>
